@@ -1,6 +1,4 @@
-
 letters = {
-    
     
 }
 ans = []
@@ -20,7 +18,6 @@ for i in range(rep):
         else:
             letters[x] += 1
             if string[0] == x and counter == 1:
-                print("yes")
                 Heavy = True
             if Heavy == True and alr == False:
                 ans.append("F")
@@ -37,6 +34,10 @@ for i in range(rep):
                 ans.append("F")
                 alr = True
                 break
+            if letters[i] > 1 and L == 0:
+                ans.append("F")
+                alr = True
+                break
             elif letters[i] == 1:
                 L = 1
             elif letters[i] > 1:
@@ -44,5 +45,6 @@ for i in range(rep):
         if alr == False:            
             ans.append("T")
     
+
 for y in ans:
     print(y)
